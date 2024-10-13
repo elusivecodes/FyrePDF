@@ -1,6 +1,6 @@
-# FyrePdf
+# FyrePDF
 
-**FyrePdf** is a free, open-source PDF generation library for *PHP*.
+**FyrePDF** is a free, open-source PDF generation library for *PHP*.
 
 
 ## Table Of Contents
