@@ -5,7 +5,7 @@
 
 ## Table Of Contents
 - [Installation](#installation)
-- [PDF Creation](#pdf-creation)
+- [Basic Usage](#basic-usage)
 - [Methods](#methods)
 - [Static Methods](#static-methods)
 
@@ -37,7 +37,7 @@ use Fyre\Utility\Pdf;
 ```
 
 
-## PDF Creation
+## Basic Usage
 
 - `$source` is a string representing the source URL or HTML file.
 
