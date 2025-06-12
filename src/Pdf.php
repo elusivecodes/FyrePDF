@@ -24,8 +24,6 @@ class Pdf
 
     protected static int $timeout = 5000;
 
-    protected string $source;
-
     /**
      * Generate a Pdf from a HTML string.
      *
@@ -95,10 +93,9 @@ class Pdf
      *
      * @param string $source The source.
      */
-    public function __construct(string $source)
-    {
-        $this->source = $source;
-    }
+    public function __construct(
+        protected string $source
+    ) {}
 
     /**
      * Save the pdf as a file.
