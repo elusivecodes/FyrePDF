@@ -5,9 +5,11 @@ namespace Tests;
 
 use finfo;
 use Fyre\Utility\Pdf;
+use Fyre\Utility\Traits\MacroTrait;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
+use function class_uses;
 use function mime_content_type;
 use function mkdir;
 use function rmdir;
@@ -31,6 +33,14 @@ final class PdfTest extends TestCase
         $this->assertSame(
             5000,
             Pdf::getTimeout()
+        );
+    }
+
+    public function testMacroable(): void
+    {
+        $this->assertContains(
+            MacroTrait::class,
+            class_uses(Pdf::class)
         );
     }
 

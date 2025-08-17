@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Fyre\Utility;
 
+use Fyre\Utility\Traits\MacroTrait;
 use RuntimeException;
 
 use function base64_encode;
@@ -20,6 +21,8 @@ use function unlink;
  */
 class Pdf
 {
+    use MacroTrait;
+
     protected static string $binaryPath = 'google-chrome';
 
     protected static int $timeout = 5000;
