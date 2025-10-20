@@ -6,9 +6,11 @@ namespace Tests;
 use finfo;
 use Fyre\Utility\Pdf;
 use Fyre\Utility\Traits\MacroTrait;
+use Fyre\Utility\Traits\StaticMacroTrait;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
+use function array_diff;
 use function class_uses;
 use function mime_content_type;
 use function mkdir;
@@ -38,9 +40,8 @@ final class PdfTest extends TestCase
 
     public function testMacroable(): void
     {
-        $this->assertContains(
-            MacroTrait::class,
-            class_uses(Pdf::class)
+        $this->assertEmpty(
+            array_diff([MacroTrait::class, StaticMacroTrait::class], class_uses(Pdf::class))
         );
     }
 
