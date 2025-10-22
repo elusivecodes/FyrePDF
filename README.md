@@ -45,22 +45,22 @@ use Fyre\Utility\Pdf;
 $pdf = new Pdf($source);
 ```
 
-**From HTML**
+**Create From HTML**
 
 Generate a *Pdf* from a HTML string.
 
 ```php
-$pdf = Pdf::fromHtml($html);
+$pdf = Pdf::createFromHtml($html);
 ```
 
-**From URL**
+**Create From URL**
 
 Generate a *Pdf* from a URL or file path.
 
 - `$url` is a string representing the source URL or HTML file.
 
 ```php
-$pdf = Pdf::fromUrl($url);
+$pdf = Pdf::createFromUrl($url);
 ```
 
 

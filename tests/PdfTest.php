@@ -47,7 +47,7 @@ final class PdfTest extends TestCase
 
     public function testPdfSaveHtml(): void
     {
-        Pdf::fromHtml('<h1>Test</h1>')
+        Pdf::createFromHtml('<h1>Test</h1>')
             ->save('tmp/test.pdf');
 
         $this->assertSame(
@@ -58,7 +58,7 @@ final class PdfTest extends TestCase
 
     public function testPdfSaveUrl(): void
     {
-        Pdf::fromUrl('tests/Mock/test.html')
+        Pdf::createFromUrl('tests/Mock/test.html')
             ->save('tmp/test.pdf');
 
         $this->assertSame(
@@ -73,13 +73,13 @@ final class PdfTest extends TestCase
 
         touch('tmp/test.pdf');
 
-        Pdf::fromUrl('tests/Mock/test.html')
+        Pdf::createFromUrl('tests/Mock/test.html')
             ->save('tmp/test.pdf');
     }
 
     public function testPdfToBinary(): void
     {
-        $pdf = Pdf::fromHtml('<h1>Test</h1>')
+        $pdf = Pdf::createFromHtml('<h1>Test</h1>')
             ->toBinary();
 
         $finfo = new finfo(FILEINFO_MIME_TYPE);

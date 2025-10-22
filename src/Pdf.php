@@ -35,7 +35,7 @@ class Pdf
      * @param string $html The HTML string.
      * @return Pdf The Pdf.
      */
-    public static function fromHtml(string $html): static
+    public static function createFromHtml(string $html): static
     {
         $base64 = base64_encode($html);
 
@@ -48,7 +48,7 @@ class Pdf
      * @param string $url The URL or file path.
      * @return Pdf The Pdf.
      */
-    public static function fromUrl(string $url): static
+    public static function createFromUrl(string $url): static
     {
         return new static($url);
     }
